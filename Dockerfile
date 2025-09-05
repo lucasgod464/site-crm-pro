@@ -16,14 +16,17 @@ COPY . .
 # Build the application
 RUN npm run build
 
-# Remove devDependencies to reduce image size
-RUN npm ci --only=production && npm cache clean --force
+# Keep vite as production dependency since it's imported by the server
+RUN npm ci --omit=dev --omit=optional && \
+    npm install vite express && \
+    npm cache clean --force
 
 # Expose port 5001
 EXPOSE 5001
 
-# Set environment to production
+# Set environment variables
 ENV NODE_ENV=production
+ENV PORT=5001
 
 # Start the application
 CMD ["npm", "start"]
