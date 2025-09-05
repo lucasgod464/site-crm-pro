@@ -112,8 +112,8 @@ export function PricingVPS() {
               data-testid={`vps-plan-${index}`}
             >
               {plan.featured && plan.badge && (
-                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
-                  <Badge className="gradient-bg text-white px-6 py-2 text-sm font-medium">
+                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 z-10">
+                  <Badge className="gradient-bg text-white px-4 py-1 text-xs font-medium rounded-full">
                     {plan.badge}
                   </Badge>
                 </div>
