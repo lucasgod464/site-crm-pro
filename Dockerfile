@@ -19,8 +19,8 @@ RUN npm run build
 # Remove devDependencies to reduce image size
 RUN npm ci --only=production && npm cache clean --force
 
-# Expose port 5000
-EXPOSE 5000
+# Expose port 5001
+EXPOSE 5001
 
 # Set environment to production
 ENV NODE_ENV=production
