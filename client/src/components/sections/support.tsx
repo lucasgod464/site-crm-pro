@@ -4,7 +4,7 @@ import { Check } from "lucide-react";
 
 export function Support() {
   const supportFeatures = [
-    "Instalação gratuita no seu servidor",
+    "Instalação gratuita na infraestrutura ArsenalCache",
     "Suporte por ticket e WhatsApp",
     "Atualizações regulares incluídas",
     "Consultoria para otimização",

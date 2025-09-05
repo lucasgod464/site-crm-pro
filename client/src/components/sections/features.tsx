@@ -40,8 +40,8 @@ export function Features() {
     },
     {
       icon: Server,
-      title: "Hospedagem Própria",
-      description: "Instale no seu servidor com controle total dos dados e zero dependência externa.",
+      title: "Infraestrutura ArsenalCache",
+      description: "Sistema instalado na estrutura segura da ArsenalCache com alta disponibilidade e performance.",
     },
   ];
 

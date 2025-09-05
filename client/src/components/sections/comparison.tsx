@@ -18,7 +18,7 @@ export function Comparison() {
   ];
 
   const arsenalFeatures = [
-    "Nossa equipe faz a instalação do sistema direto no seu servidor",
+    "Nossa equipe instala o sistema na infraestrutura ArsenalCache",
     "Sistema estável com atualizações frequentes",
     "Módulo SAAS para gestão e revenda de múltiplas contas",
     "Suporte técnico de segunda à sexta",
@@ -92,7 +92,7 @@ export function Comparison() {
                 <Card className="text-center p-6 bg-card border border-primary/20">
                   <CardContent className="p-0">
                     <div className="text-sm text-muted-foreground mb-2">Plano único, sem limites</div>
-                    <div className="text-4xl font-bold text-gradient mb-2" data-testid="price-arsenal">R$ 2.497</div>
+                    <div className="text-4xl font-bold text-gradient mb-2" data-testid="price-arsenal">R$ 649,90</div>
                     <div className="text-muted-foreground">/ano</div>
                   </CardContent>
                 </Card>
