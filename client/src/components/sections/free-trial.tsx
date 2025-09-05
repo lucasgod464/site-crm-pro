@@ -1,82 +1,8 @@
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { useToast } from "@/hooks/use-toast";
 import { Check, PlayCircle } from "lucide-react";
 
-interface TrialFormData {
-  fullName: string;
-  email: string;
-  phone: string;
-  company: string;
-}
-
 export function FreeTrial() {
-  const [formData, setFormData] = useState<TrialFormData>({
-    fullName: "",
-    email: "",
-    phone: "",
-    company: "",
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const { toast } = useToast();
-
-  const handleInputChange = (field: keyof TrialFormData, value: string) => {
-    setFormData(prev => ({ ...prev, [field]: value }));
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    setIsSubmitting(true);
-
-    try {
-      // URL do webhook para teste grátis - você pode configurar isso nas variáveis de ambiente
-      const webhookUrl = import.meta.env.VITE_WEBHOOK_URL || "https://webhook.site/your-webhook-url";
-      
-      const response = await fetch(webhookUrl, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          type: "free_trial_request",
-          data: {
-            ...formData,
-            timestamp: new Date().toISOString(),
-          }
-        }),
-      });
-
-      if (response.ok) {
-        toast({
-          title: "Teste Grátis Ativado!",
-          description: "Você receberá as credenciais de acesso em seu email em alguns minutos.",
-        });
-        
-        // Reset form
-        setFormData({
-          fullName: "",
-          email: "",
-          phone: "",
-          company: "",
-        });
-      } else {
-        throw new Error("Erro ao ativar teste grátis");
-      }
-    } catch (error: any) {
-      toast({
-        title: "Erro",
-        description: error.message || "Erro ao ativar teste grátis. Tente novamente.",
-        variant: "destructive",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
 
   const benefits = [
     "Acesso completo por 30 dias",
@@ -115,98 +41,37 @@ export function FreeTrial() {
             </div>
           </div>
           
-          <div>
-            <Card className="bg-card border border-border shadow-2xl">
-              <CardContent className="p-8">
-                <div className="text-center mb-6">
-                  <h3 className="text-2xl font-bold mb-2">Ative Seu Teste Grátis</h3>
-                  <p className="text-muted-foreground">
-                    Preencha os dados e receba acesso instantâneo
-                  </p>
+          <div className="text-center">
+            <div className="bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl p-8 border border-primary/20">
+              <div className="text-6xl mb-6">🚀</div>
+              <h3 className="text-3xl font-bold mb-4">
+                Comece Seu Teste 
+                <span className="text-gradient block">Gratuito Agora</span>
+              </h3>
+              <p className="text-lg text-muted-foreground mb-8 max-w-md mx-auto">
+                Acesse toda a plataforma por 30 dias sem compromisso e veja na prática como transformar seu atendimento.
+              </p>
+              
+              <Button 
+                size="lg"
+                className="gradient-bg text-primary-foreground px-12 py-6 text-xl font-semibold transition-all transform hover:scale-105 hover:shadow-2xl"
+                data-testid="button-start-trial"
+              >
+                <PlayCircle className="w-6 h-6 mr-3" />
+                Iniciar Teste Grátis
+              </Button>
+              
+              <div className="flex items-center justify-center space-x-6 mt-8 text-sm text-muted-foreground">
+                <div className="flex items-center space-x-2">
+                  <Check className="w-4 h-4 text-primary" />
+                  <span>Sem cartão de crédito</span>
                 </div>
-
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div>
-                    <Label htmlFor="trial-fullName" className="block text-sm font-medium text-foreground mb-2">
-                      Nome completo
-                    </Label>
-                    <Input
-                      id="trial-fullName"
-                      type="text"
-                      value={formData.fullName}
-                      onChange={(e) => handleInputChange("fullName", e.target.value)}
-                      placeholder="Seu nome completo"
-                      required
-                      data-testid="input-trial-fullname"
-                    />
-                  </div>
-
-                  <div>
-                    <Label htmlFor="trial-email" className="block text-sm font-medium text-foreground mb-2">
-                      Email profissional
-                    </Label>
-                    <Input
-                      id="trial-email"
-                      type="email"
-                      value={formData.email}
-                      onChange={(e) => handleInputChange("email", e.target.value)}
-                      placeholder="seu@empresa.com"
-                      required
-                      data-testid="input-trial-email"
-                    />
-                  </div>
-
-                  <div>
-                    <Label htmlFor="trial-phone" className="block text-sm font-medium text-foreground mb-2">
-                      WhatsApp
-                    </Label>
-                    <Input
-                      id="trial-phone"
-                      type="tel"
-                      value={formData.phone}
-                      onChange={(e) => handleInputChange("phone", e.target.value)}
-                      placeholder="(11) 99999-9999"
-                      required
-                      data-testid="input-trial-phone"
-                    />
-                  </div>
-
-                  <div>
-                    <Label htmlFor="trial-company" className="block text-sm font-medium text-foreground mb-2">
-                      Empresa
-                    </Label>
-                    <Input
-                      id="trial-company"
-                      type="text"
-                      value={formData.company}
-                      onChange={(e) => handleInputChange("company", e.target.value)}
-                      placeholder="Nome da empresa"
-                      required
-                      data-testid="input-trial-company"
-                    />
-                  </div>
-                  
-                  <Button 
-                    type="submit" 
-                    size="lg"
-                    className="w-full gradient-bg text-primary-foreground py-4 text-lg transition-all transform hover:scale-105 hover:shadow-xl"
-                    disabled={isSubmitting}
-                    data-testid="button-submit-trial"
-                  >
-                    {isSubmitting ? "Ativando..." : "Ativar Teste Grátis - 30 Dias"}
-                  </Button>
-                </form>
-
-                <div className="mt-6 pt-6 border-t border-border">
-                  <div className="flex items-center justify-center space-x-2 text-sm text-muted-foreground">
-                    <Check className="w-4 h-4 text-primary" />
-                    <span>Sem cartão de crédito</span>
-                    <span>•</span>
-                    <span>Cancelamento gratuito</span>
-                  </div>
+                <div className="flex items-center space-x-2">
+                  <Check className="w-4 h-4 text-primary" />
+                  <span>Cancelamento gratuito</span>
                 </div>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
           </div>
         </div>
       </div>
