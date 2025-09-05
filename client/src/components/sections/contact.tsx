@@ -7,7 +7,6 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
 import { Check } from "lucide-react";
-import { apiRequest } from "@/lib/queryClient";
 
 interface FormData {
   fullName: string;
@@ -49,17 +48,28 @@ export function Contact() {
     setIsSubmitting(true);
 
     try {
-      const response = await apiRequest("POST", "/api/contact", {
-        ...formData,
-        acceptTerms: formData.acceptTerms ? "true" : "false",
+      // URL do webhook - você pode configurar isso nas variáveis de ambiente
+      const webhookUrl = import.meta.env.VITE_WEBHOOK_URL || "https://webhook.site/your-webhook-url";
+      
+      const response = await fetch(webhookUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          type: "contact_form",
+          data: {
+            ...formData,
+            acceptTerms: formData.acceptTerms ? "true" : "false",
+            timestamp: new Date().toISOString(),
+          }
+        }),
       });
 
-      const result = await response.json();
-
-      if (result.success) {
+      if (response.ok) {
         toast({
           title: "Sucesso!",
-          description: result.message,
+          description: "Sua mensagem foi enviada com sucesso! Entraremos em contato em breve.",
         });
         
         // Reset form
@@ -72,7 +82,7 @@ export function Contact() {
           acceptTerms: false,
         });
       } else {
-        throw new Error(result.message);
+        throw new Error("Erro ao enviar mensagem");
       }
     } catch (error: any) {
       toast({
