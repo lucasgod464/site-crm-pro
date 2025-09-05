@@ -16,6 +16,9 @@ COPY . .
 # Build only the client (frontend)
 RUN npx vite build
 
+# Create symlink so server can find the build files
+RUN ln -s /app/dist/public /app/server/public
+
 # Expose port 5001
 EXPOSE 5001
 
