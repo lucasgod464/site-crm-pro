@@ -44,31 +44,7 @@ export function Comparison() {
           </p>
         </div>
         
-        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          {/* Other Systems */}
-          <Card className="bg-card border border-border">
-            <CardContent className="p-8">
-              <h3 className="text-2xl font-bold mb-6 text-center">Outros Sistemas</h3>
-              <div className="space-y-4 mb-8">
-                {otherSystemsFeatures.map((feature, index) => (
-                  <div key={index} className="flex items-start space-x-3">
-                    <X className="w-5 h-5 text-red-500 mt-0.5 flex-shrink-0" />
-                    <span>{feature}</span>
-                  </div>
-                ))}
-              </div>
-              
-              <div className="space-y-3" data-testid="other-systems-pricing">
-                {otherSystemsPricing.map((pricing, index) => (
-                  <div key={index} className="flex justify-between items-center p-3 bg-muted rounded-lg">
-                    <span>{pricing.plan}</span>
-                    <span className="font-bold">{pricing.price}</span>
-                  </div>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
-          
+        <div className="flex justify-center max-w-5xl mx-auto">
           {/* ArsenalCache CRM Pro */}
           <Card className="bg-gradient-to-br from-primary/10 to-accent/10 border-2 border-primary/50 relative">
             <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
