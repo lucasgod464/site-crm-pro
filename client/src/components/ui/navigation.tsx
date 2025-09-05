@@ -11,6 +11,7 @@ export function Navigation() {
     { href: "#features", label: "Recursos" },
     { href: "#integrations", label: "Integrações" },
     { href: "#testimonials", label: "Casos" },
+    { href: "#free-trial", label: "Teste Grátis" },
     { href: "#contact", label: "Contato" },
   ];
 
@@ -49,7 +50,7 @@ export function Navigation() {
             <Button 
               className="gradient-bg text-primary-foreground hover:opacity-90 transition-all transform hover:scale-105"
               data-testid="button-demo-nav"
-              onClick={() => scrollToSection("#contact")}
+              onClick={() => scrollToSection("#free-trial")}
             >
               Teste Grátis
             </Button>
@@ -76,7 +77,7 @@ export function Navigation() {
                 ))}
                 <Button 
                   className="gradient-bg text-primary-foreground w-full"
-                  onClick={() => scrollToSection("#contact")}
+                  onClick={() => scrollToSection("#free-trial")}
                   data-testid="button-demo-mobile"
                 >
                   Teste Grátis
