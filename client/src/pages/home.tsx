@@ -5,6 +5,7 @@ import { Features } from "@/components/sections/features";
 import { ProductShowcase } from "@/components/sections/product-showcase";
 import { Integrations } from "@/components/sections/integrations";
 import { Comparison } from "@/components/sections/comparison";
+import { PricingVPS } from "@/components/sections/pricing-vps";
 import { Testimonials } from "@/components/sections/testimonials";
 import { Support } from "@/components/sections/support";
 import { Contact } from "@/components/sections/contact";
@@ -21,6 +22,7 @@ export default function Home() {
         <ProductShowcase />
         <Integrations />
         <Comparison />
+        <PricingVPS />
         <Testimonials />
         <Support />
         <Contact />

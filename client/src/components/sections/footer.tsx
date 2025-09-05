@@ -4,17 +4,17 @@ import arsenalLogo from "@assets/Sem título (11)_1757098339013.png";
 
 export function Footer() {
   const productLinks = [
-    { href: "#features", label: "Recursos" },
-    { href: "#integrations", label: "Integrações" },
-    { href: "#", label: "Preços" },
-    { href: "#", label: "Atualizações" },
+    { href: "#features", label: "Recursos", id: "features" },
+    { href: "#integrations", label: "Integrações", id: "integrations" },
+    { href: "#pricing", label: "Preços", id: "pricing" },
+    { href: "#updates", label: "Atualizações", id: "updates" },
   ];
 
   const supportLinks = [
-    { href: "#", label: "Central de Ajuda" },
-    { href: "#", label: "Documentação" },
-    { href: "#contact", label: "Contato" },
-    { href: "#", label: "Status" },
+    { href: "#help", label: "Central de Ajuda", id: "help" },
+    { href: "#docs", label: "Documentação", id: "docs" },
+    { href: "#contact", label: "Contato", id: "contact" },
+    { href: "#status", label: "Status", id: "status" },
   ];
 
   const socialLinks = [
@@ -69,7 +69,7 @@ export function Footer() {
             <h4 className="font-semibold mb-4">Produto</h4>
             <ul className="space-y-2 text-muted-foreground">
               {productLinks.map((link) => (
-                <li key={link.href}>
+                <li key={link.id}>
                   <button
                     onClick={() => scrollToSection(link.href)}
                     className="hover:text-primary transition-colors text-left"
@@ -86,7 +86,7 @@ export function Footer() {
             <h4 className="font-semibold mb-4">Suporte</h4>
             <ul className="space-y-2 text-muted-foreground">
               {supportLinks.map((link) => (
-                <li key={link.href}>
+                <li key={link.id}>
                   <button
                     onClick={() => scrollToSection(link.href)}
                     className="hover:text-primary transition-colors text-left"
