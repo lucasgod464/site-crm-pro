@@ -24,7 +24,7 @@ export function Hero() {
           <div className="animate-fade-in-up">
             <Badge variant="secondary" className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 text-primary border-primary/20 mb-6">
               <span className="w-2 h-2 bg-primary rounded-full mr-2 animate-pulse-slow"></span>
-              Sistema Auto-Hospedado | White Label
+              Sistema ArsenalCache | White Label
             </Badge>
             
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
@@ -60,7 +60,7 @@ export function Hero() {
             <div className="flex items-center flex-wrap gap-6 text-sm text-muted-foreground">
               <div className="flex items-center">
                 <Check className="w-5 h-5 text-green-500 mr-2" />
-                Instalação gratuita
+                Instalação Pela Nosso Equipe
               </div>
               <div className="flex items-center">
                 <Check className="w-5 h-5 text-green-500 mr-2" />
@@ -68,7 +68,7 @@ export function Hero() {
               </div>
               <div className="flex items-center">
                 <Check className="w-5 h-5 text-green-500 mr-2" />
-                30 dias grátis
+                7 dias grátis
               </div>
             </div>
           </div>

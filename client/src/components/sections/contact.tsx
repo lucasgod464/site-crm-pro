@@ -221,7 +221,7 @@ export function Contact() {
                 </div>
                 <div className="flex items-center space-x-2">
                   <Check className="w-5 h-5 text-primary" />
-                  <span>30 dias grátis</span>
+                  <span>7 dias grátis</span>
                 </div>
               </div>
             </div>
