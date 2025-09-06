@@ -101,6 +101,18 @@ export function Footer() {
         </div>
         
         <div className="border-t border-border pt-8">
+          <div className="mb-6 text-center">
+            <div className="bg-muted/30 rounded-lg p-6 max-w-2xl mx-auto">
+              <h4 className="font-semibold mb-3 text-primary">Informações da Empresa</h4>
+              <div className="text-sm text-muted-foreground space-y-1">
+                <p><strong>YUCCIE DIGITAL AGENCIAS DE PUBLICIDADE LTDA - ME</strong></p>
+                <p>CNPJ: 44.980.010/0001-06</p>
+                <p>Fundada em: 24/01/2022 - São José dos Campos/SP</p>
+                <p>Atividade principal: Agências de publicidade</p>
+              </div>
+            </div>
+          </div>
+          
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-muted-foreground text-sm" data-testid="copyright">
               © 2024 ArsenalCache CRM Pro. Todos os direitos reservados.
