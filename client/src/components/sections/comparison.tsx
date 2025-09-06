@@ -77,7 +77,7 @@ export function Comparison() {
               <Button 
                 size="lg"
                 className="w-full gradient-bg text-primary-foreground py-4 text-lg transition-all transform hover:scale-105 hover:shadow-xl"
-                onClick={scrollToContact}
+                onClick={() => window.open('https://wa.me/5512981156856?text=Olá! Quero começar a usar o ArsenalCache CRM Pro. Gostaria de mais informações sobre o plano anual de R$ 649,90.', '_blank')}
                 data-testid="button-start-comparison"
               >
                 Quero Começar Agora
