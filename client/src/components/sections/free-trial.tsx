@@ -5,7 +5,7 @@ import { Check, PlayCircle } from "lucide-react";
 export function FreeTrial() {
 
   const benefits = [
-    "Acesso completo por 30 dias",
+    "Acesso completo por 7 dias",
     "Sem limitação de recursos",
     "Suporte técnico incluído",
     "Configuração gratuita",
@@ -25,7 +25,7 @@ export function FreeTrial() {
               <span className="text-gradient block">gratuitamente</span>
             </h2>
             <p className="text-xl text-muted-foreground mb-8">
-              Teste todas as funcionalidades do sistema por 30 dias sem compromisso. 
+              Teste todas as funcionalidades do sistema por 7 dias sem compromisso. 
               Veja na prática como podemos transformar seu atendimento.
             </p>
             
@@ -49,14 +49,18 @@ export function FreeTrial() {
                 <span className="text-gradient block">Gratuito Agora</span>
               </h3>
               <p className="text-lg text-muted-foreground mb-8 max-w-md mx-auto">
-                Acesse toda a plataforma por 30 dias sem compromisso e veja na prática como transformar seu atendimento.
+                Acesse toda a plataforma por 7 dias sem compromisso e veja na prática como transformar seu atendimento.
               </p>
               
               <Button 
                 size="lg"
                 className="gradient-bg text-primary-foreground px-12 py-6 text-xl font-semibold transition-all transform hover:scale-105 hover:shadow-2xl"
                 data-testid="button-start-trial"
+<<<<<<< HEAD
+                onClick={() => window.open('https://wa.me/5512981156856?text=Olá! Gostaria de iniciar o teste grátis de 7 dias do ArsenalCache CRM Pro.', '_blank')}
+=======
                 onClick={() => window.open('https://testecrm.suamarca.pro/', '_blank')}
+>>>>>>> c391a4cc17e239aef0b8ddb34da63926d2032c8f
               >
                 <PlayCircle className="w-6 h-6 mr-3" />
                 Iniciar Teste Grátis
