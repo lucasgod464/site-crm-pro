@@ -49,7 +49,7 @@ export function Contact() {
 
     try {
       // URL do webhook - você pode configurar isso nas variáveis de ambiente
-      const webhookUrl = import.meta.env.VITE_WEBHOOK_URL || "https://webhook.site/your-webhook-url";
+      const webhookUrl = import.meta.env.VITE_WEBHOOK_URL || "https://n8n.yuccie.pro/webhook/7d06f608-9d15-471c-a20e-0ed86a032301";
       
       const response = await fetch(webhookUrl, {
         method: "POST",
