@@ -56,7 +56,7 @@ export function FreeTrial() {
                 size="lg"
                 className="gradient-bg text-primary-foreground px-12 py-6 text-xl font-semibold transition-all transform hover:scale-105 hover:shadow-2xl"
                 data-testid="button-start-trial"
-                onClick={() => window.open('https://wa.me/5512981156856?text=Olá! Gostaria de iniciar o teste grátis de 30 dias do ArsenalCache CRM Pro.', '_blank')}
+                onClick={() => window.open('https://testecrm.suamarca.pro/', '_blank')}
               >
                 <PlayCircle className="w-6 h-6 mr-3" />
                 Iniciar Teste Grátis
