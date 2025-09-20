@@ -78,37 +78,15 @@ export function Hero() {
               <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 rounded-2xl blur-3xl transform rotate-6"></div>
               <div className="relative bg-card border border-border rounded-2xl p-1 shadow-2xl">
                 <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl overflow-hidden">
-                  <div className="aspect-video bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center relative group cursor-pointer" data-testid="video-demo">
-                    {/* Dashboard interface preview */}
-                    <div className="absolute inset-4 bg-gray-100 dark:bg-gray-900 rounded-lg overflow-hidden">
-                      <div className="h-8 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 flex items-center px-4">
-                        <div className="flex space-x-2">
-                          <div className="w-3 h-3 rounded-full bg-red-400"></div>
-                          <div className="w-3 h-3 rounded-full bg-yellow-400"></div>
-                          <div className="w-3 h-3 rounded-full bg-green-400"></div>
-                        </div>
-                        <div className="ml-4 text-xs text-gray-500">ArsenalCache CRM Dashboard</div>
-                      </div>
-                      <div className="p-4 space-y-3">
-                        <div className="flex items-center justify-between">
-                          <div className="h-4 bg-primary/20 rounded w-32"></div>
-                          <div className="h-6 bg-primary rounded w-16"></div>
-                        </div>
-                        <div className="grid grid-cols-3 gap-3">
-                          <div className="h-12 bg-primary/10 rounded"></div>
-                          <div className="h-12 bg-accent/10 rounded"></div>
-                          <div className="h-12 bg-primary/10 rounded"></div>
-                        </div>
-                        <div className="h-24 bg-gradient-to-r from-primary/5 to-accent/5 rounded"></div>
-                      </div>
-                    </div>
-                    
-                    {/* Play button overlay */}
-                    <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/30 transition-all">
-                      <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-all">
-                        <Play className="w-6 h-6 text-white ml-1" fill="currentColor" />
-                      </div>
-                    </div>
+                  <div className="aspect-video rounded-xl overflow-hidden" data-testid="video-demo">
+                    <iframe 
+                      className="w-full h-full"
+                      src="https://www.youtube.com/embed/BSCEediVdsg"
+                      title="ArsenalCache CRM Pro - Demo"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                    ></iframe>
                   </div>
                 </div>
               </div>
